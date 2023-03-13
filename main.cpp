@@ -56,7 +56,7 @@ int main()
 	auto clientCount = 10;
 	std::cout << "Начало обслуживания клиентов, максимальное количество: " << clientCount << std::endl;
 
-	std::thread clientThread(simulateClients, 10);
+	std::thread clientThread(simulateClients, clientCount);
 	std::thread operatorThread(simulateOperators);
 	clientThread.join();
 	operatorThread.join();
